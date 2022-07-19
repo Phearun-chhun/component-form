@@ -1,19 +1,16 @@
 <template>
     <form>
         <div class="form">
-            <input type="text" id="firstname" placeholder="First name">
-            <input type="text" id="lastname" placeholder="Last name">
-            <input type="text" id="comment" placeholder="comment">
+            <input type="text" id="firstname" placeholder="First name" v-model="firstname">
+            <input type="text" id="lastname" placeholder="Last name" v-model="lastname">
+            <input type="text" id="comment" placeholder="comment" v-model="commment">
             <button>ADD</button>
         </div>
     </form>
 </template>
 
 <script>
-
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 .form {
