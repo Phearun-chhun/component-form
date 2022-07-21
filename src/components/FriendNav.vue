@@ -1,12 +1,11 @@
 <template>
-
   <body>
     <nav>
       <ul>
-        <li>HOME</li>
-        <li>ABOUT US</li>
-        <li>CONTACT</li>
-        <li>HELP?</li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">HELP?</a></li>
       </ul>
     </nav>
   </body>
@@ -34,15 +33,20 @@ nav {
 }
 
 ul {
-  text-decoration: none;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   color: white;
 }
 
-ul li {
+ul li{
+  color:#FFF;
   padding: 7px;
   list-style-type: none;
+}
+
+ul li a{
+  color:#FFF;
+  text-decoration: none;
 }
 </style>

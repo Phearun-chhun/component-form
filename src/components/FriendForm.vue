@@ -1,18 +1,52 @@
 <template>
-    <form>
+    <form @submit.prevent="addPerson">
         <div class="form">
             <input type="text" id="firstname" placeholder="First name" v-model="firstname">
             <input type="text" id="lastname" placeholder="Last name" v-model="lastname">
-            <input type="text" id="comment" placeholder="comment" v-model="commment">
+            <input type="text" id="comment" placeholder="comment" v-model="comment">
             <button>ADD</button>
         </div>
     </form>
+    <FriendCard  :object='lists'/>
 </template>
-
-<script>
+<script >
+import FriendCard from "./FriendCard.vue";
+export default {
+    components: {
+        FriendCard
+    },
+    data() {
+        return {
+            firstname: null,
+            lastname: null,
+            comment: null,
+            lists: [],
+            fullname: "",
+        };
+    },
+    methods: {
+        addPerson() {
+            if (this.firstname != null && this.lastname != null && this.comment != null) {
+                let object = { name: this.fullname, comment: this.comment };
+                this.firstname = "",
+                    this.lastname = "",
+                    this.comment = "",
+                    this.lists.push(object);
+            }
+        }
+    },
+    computed: {},
+    watch: {
+        firstname(value) {
+            this.fullname = value + " " + this.lastname;
+        },
+        lastname(value) {
+            this.fullname = this.firstname+ " "+value ;
+        },
+    },
+};
 </script>
 <style scoped>
-
 .form {
     width: 40%;
     box-sizing: border-box;

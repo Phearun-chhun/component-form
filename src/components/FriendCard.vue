@@ -1,21 +1,15 @@
 <template>
-    <section v-for="item in items " :key="item">
-        <h2>{{item.name}}</h2>
-        <p>{{item.description}}</p> 
+    <section v-for="people in object" :key="people"> 
+        <h2>{{people.name}}</h2>
+        <p>{{people.comment}}</p>
     </section>
-    
+
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            items: [
-                { name: "Ronan OGOR", description: "The best teahcer" },
-                { name: "Him HEY", description: "The best teacher of the Vue js" },
-                {name:"Rady Y",description:"The best teacher of LARAVEL"}
-            ]
-        }
+    props: {
+        object:Object
     }
 }
 </script>
